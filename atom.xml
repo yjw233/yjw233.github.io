@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yjw233.github.io</id>
     <title>Jev</title>
-    <updated>2021-05-03T12:04:05.375Z</updated>
+    <updated>2021-05-03T12:04:59.905Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yjw233.github.io"/>
     <link rel="self" href="https://yjw233.github.io/atom.xml"/>
-    <subtitle>锲而不舍，金石可镂</subtitle>
+    <subtitle>不积跬步，无以至千里</subtitle>
     <logo>https://yjw233.github.io/images/avatar.png</logo>
     <icon>https://yjw233.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Jev</rights>
