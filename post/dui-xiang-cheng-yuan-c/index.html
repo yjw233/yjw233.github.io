@@ -6,7 +6,7 @@
 
 <title>对象成员（C++） | Jev</title>
 
-<link rel="shortcut icon" href="https://yjw233.github.io/favicon.ico?v=1620304673455">
+<link rel="shortcut icon" href="https://yjw233.github.io/favicon.ico?v=1620304969132">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://yjw233.github.io/styles/main.css">
@@ -85,7 +85,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1620304673455" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1620304969132" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -114,7 +114,70 @@
                     
                 </div>
                 <div class="post-content">
-                    <pre><code class="language-c">#include&lt;iostream&gt;
+                    <h1 id="题目描述">题目描述</h1>
+<p>设计一个产品类 Product ，允许通过如下方式来创建产品对象： 通过指定产品名创建； 通过指定产品名和产品价格创建； 通过指定产品名、产品价格、出厂日期（对象成员）创建； Product 还应该包含如下属性：生产厂家、易碎标记、有效日期（使用对象成员）、颜色、高度。成员函数包括访问和修改这些属性的操作。 在 main( ) 中定义对象，并输出相关信息。<br>
+相关类的定义提示:</p>
+<pre><code class="language-c++">class Product
+{
+       string name;
+       double price;
+       Date deptime;
+       string factory;
+       bool easy_break;
+       Date valtime; 
+       string color;
+       double high;
+public:
+       ........ 
+       void output (  ); 
+}; 
+</code></pre>
+<p>输出函数提示 :</p>
+<pre><code class="language-c++">void Product::output (  )
+{
+       cout&lt;&lt;name&lt;&lt;&quot; &quot;&lt;&lt;price&lt;&lt;endl;
+       cout&lt;&lt;deptime.Getyear()&lt;&lt;&quot;-&quot;&lt;&lt;deptime.Getmonth()&lt;&lt;&quot;-&quot;&lt;&lt;deptime.Getday()&lt;&lt;endl;
+       cout&lt;&lt;factory&lt;&lt;&quot; &quot;&lt;&lt;easy_break&lt;&lt;endl;
+       cout&lt;&lt;valtime.Getyear()&lt;&lt;&quot;-&quot;&lt;&lt;valtime.Getmonth()&lt;&lt;&quot;-&quot;&lt;&lt;valtime.Getday()&lt;&lt;endl;
+} 
+</code></pre>
+<p>main（）函数如下，请复制使用</p>
+<pre><code class="language-c++">int main()
+{
+       string  s;
+       cin&gt;&gt;s;
+       Product p1(&quot;car&quot;);
+       Product p2(&quot;glass&quot;,3.00);
+       Product p3(&quot;pen&quot;,5.00,2009,3,14);
+       p1.SetProduct(&quot;car&quot;,100000.0,2009,3,14,&quot;nanjing&quot;,0,2010,10,14,&quot;red&quot;,1.5);
+       p1.output();
+       p2.output();
+       p3.output();
+       return 0;
+}
+</code></pre>
+<p>输入描述</p>
+<pre><code class="language-c++">Start
+</code></pre>
+<p>输出描述</p>
+<pre><code class="language-c++">Constrcting One....
+Constrcting Two....
+Constrcting Three....
+car 100000
+2009-3-14
+nanjing 0
+2010-10-14
+glass 3
+2000-1-1
+unnamed 0
+2000-1-1
+pen 5
+2009-3-14
+unnamed 0
+2000-1-1
+</code></pre>
+<h1 id="解法">解法</h1>
+<pre><code class="language-c++">#include&lt;iostream&gt;
 #include&lt;string&gt;
 using namespace std;
 class Date{
