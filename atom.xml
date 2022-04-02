@@ -2,14 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yjw233.github.io</id>
     <title>Jev</title>
-    <updated>2021-05-06T13:02:10.695Z</updated>
+    <updated>2022-04-02T07:18:02.863Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yjw233.github.io"/>
     <link rel="self" href="https://yjw233.github.io/atom.xml"/>
     <subtitle>不积跬步，无以至千里</subtitle>
     <logo>https://yjw233.github.io/images/avatar.png</logo>
     <icon>https://yjw233.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, Jev</rights>
+    <rights>All rights reserved 2022, Jev</rights>
+    <entry>
+        <title type="html"><![CDATA[webase启动]]></title>
+        <id>https://yjw233.github.io/post/webase-qi-dong/</id>
+        <link href="https://yjw233.github.io/post/webase-qi-dong/">
+        </link>
+        <updated>2022-04-02T07:15:30.000Z</updated>
+        <content type="html"><![CDATA[<p>cd webase-deploy/<br>
+python3 deploy.py startAll</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[对象成员（C++）]]></title>
         <id>https://yjw233.github.io/post/dui-xiang-cheng-yuan-c/</id>
@@ -129,7 +139,7 @@ Product::Product(string n,double p,int y,int m,int d):deptime(y,m,d)
               cout&lt;&lt;&quot;Constrcting Three....&quot;&lt;&lt;endl;
        } 
 void Product::SetProduct(string n,double p,int y,int m,int d,string f,bool e,int yy, int mm,int dd,string c,double h)
-       {             name=n;price=p;deptime.setDate(y,m,d);factory=f;easy_break=e;valtime.setDate(yy,mm,dd);color=c;high=h;
+       {      name=n;price=p;deptime.setDate(y,m,d);factory=f;easy_break=e;valtime.setDate(yy,mm,dd);color=c;high=h;
        } 
 void Product::output (  )
 {
