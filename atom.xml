@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yjw233.github.io</id>
     <title>Jev</title>
-    <updated>2022-04-04T04:06:32.024Z</updated>
+    <updated>2022-06-20T10:38:48.698Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yjw233.github.io"/>
     <link rel="self" href="https://yjw233.github.io/atom.xml"/>
@@ -11,6 +11,159 @@
     <icon>https://yjw233.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Jev</rights>
     <entry>
+        <title type="html"><![CDATA[k8s secret]]></title>
+        <id>https://yjw233.github.io/post/k8s-secret/</id>
+        <link href="https://yjw233.github.io/post/k8s-secret/">
+        </link>
+        <updated>2022-06-15T16:35:27.000Z</updated>
+        <content type="html"><![CDATA[<p>kubectl get secret -n titanium regcred -o jsonpath='{.data.*}'| base64 -d<br>
+kubectl get secret -n titanium default-token-dqpqz -o yaml</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[git命令]]></title>
+        <id>https://yjw233.github.io/post/git-ming-ling/</id>
+        <link href="https://yjw233.github.io/post/git-ming-ling/">
+        </link>
+        <updated>2022-05-23T08:58:58.000Z</updated>
+        <content type="html"><![CDATA[<ol>
+<li>查看远程仓库<br>
+$ git remote -v</li>
+<li>从远程获取最新版本到本地<br>
+$ git fetch origin master</li>
+<li>比较本地的仓库和远程参考的区别<br>
+$ git log -p master.. origin/master</li>
+<li>把远程下载下来的代码合并到本地仓库，远程的和本地的合并<br>
+$ git merge origin/master</li>
+</ol>
+<p>查看修改的状态<br>
+git status<br>
+指定commit包含的文件<br>
+git add<br>
+完成一次本地commit<br>
+git commit -a -m  &quot;&quot;</p>
+<p>参考 https://blog.csdn.net/qcmc123/article/details/119612411</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GNU nano使用]]></title>
+        <id>https://yjw233.github.io/post/gnu-nano-shi-yong/</id>
+        <link href="https://yjw233.github.io/post/gnu-nano-shi-yong/">
+        </link>
+        <updated>2022-05-16T14:40:25.000Z</updated>
+        <content type="html"><![CDATA[<p>Ctrl+S 保存你的工作<br>
+Ctrl+W 另存为<br>
+Ctrl+R 加载文件（读取）<br>
+Ctrl+X 退出<br>
+Ctrl+G 获得帮助<br>
+Alt+A 选择（标记）一个区域<br>
+Ctrl+K 剪切标记的文字<br>
+Ctrl+U 粘贴（不剪切）<br>
+Alt+F 撤销<br>
+Alt+E 重做<br>
+Ctrl+G 获取帮助</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[生成证书]]></title>
+        <id>https://yjw233.github.io/post/sheng-cheng-zheng-shu/</id>
+        <link href="https://yjw233.github.io/post/sheng-cheng-zheng-shu/">
+        </link>
+        <updated>2022-05-14T18:00:12.000Z</updated>
+        <content type="html"><![CDATA[<p>openssl genrsa -out Root_CA_1.key 2048<br>
+openssl req -new -key Root_CA_1.key -out Root_CA_1.csr -utf8<br>
+openssl x509 -req -days 3650 -in Root_CA_1.csr -signkey Root_CA_1.key -out Root_CA_1.cer</p>
+<p>openssl genrsa -out Sub-CA_3.key 2048<br>
+openssl req -new -key Sub-CA_3.key -out Sub-CA_3.csr -utf8<br>
+openssl x509 -req  -CA Root_CA_1.cer -CAkey Root_CA_1.key -days 3650 -in Sub-CA_3.csr -out Sub-CA_3.cer -sha1 -CAserial Root_CA_1.srl -CAcreateserial</p>
+<p>openssl genrsa -out UE_A.key 2048<br>
+openssl req -new -key UE_A.key -out UE_A.csr -utf8<br>
+openssl x509 -req  -CA Sub-CA_3.cer -CAkey Sub-CA_3.key -days 3650 -in UE_A.csr -out UE_A.cer -sha1 -CAserial Sub-CA_3.srl -CAcreateserial -extensions v3_req</p>
+<p>https://blog.csdn.net/AAugust/article/details/102680169</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[毕设]]></title>
+        <id>https://yjw233.github.io/post/bi-she/</id>
+        <link href="https://yjw233.github.io/post/bi-she/">
+        </link>
+        <updated>2022-05-13T14:25:18.000Z</updated>
+        <content type="html"><![CDATA[<p>cd implementation<br>
+ganache-cli --allowUnlimitedContractSize -l 90000000 -d</p>
+<p>Second window:<br>
+cd implementation<br>
+truffle console</p>
+<blockquote>
+<p>migrate --reset<br>
+exec set_root.js<br>
+exec set_intermediate.js<br>
+exec set_EE.js<br>
+exec get_status.js</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[restservice配置]]></title>
+        <id>https://yjw233.github.io/post/restservice-pei-zhi/</id>
+        <link href="https://yjw233.github.io/post/restservice-pei-zhi/">
+        </link>
+        <updated>2022-05-10T03:22:00.000Z</updated>
+        <content type="html"><![CDATA[<p>'''shell<br>
+git clone  https://github.com/WeBankBlockchain/WeIdentity-Rest-Service.git</p>
+<p>'''</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[创建验证cpt]]></title>
+        <id>https://yjw233.github.io/post/chuang-jian-yan-zheng-cpt/</id>
+        <link href="https://yjw233.github.io/post/chuang-jian-yan-zheng-cpt/">
+        </link>
+        <updated>2022-04-23T10:32:01.000Z</updated>
+        <content type="html"><![CDATA[<p>{<br>
+&quot;functionArg&quot;: {<br>
+&quot;cptId&quot;: 2000000,<br>
+&quot;issuer&quot;: &quot;did:weid:0xcefbd444b2c0f441ff0e3cb774a48a6d68cc6df2&quot;,<br>
+&quot;expirationDate&quot;: &quot;2119-04-18T21:12:33Z&quot;,<br>
+&quot;claim&quot;: {<br>
+&quot;name&quot;: &quot;zhang san&quot;,<br>
+&quot;gender&quot;: &quot;F&quot;,<br>
+&quot;age&quot;: 18<br>
+}<br>
+},<br>
+&quot;transactionArg&quot;: {<br>
+&quot;invokerWeId&quot;: &quot;did:weid:0xcefbd444b2c0f441ff0e3cb774a48a6d68cc6df2&quot;<br>
+},<br>
+&quot;functionName&quot;: &quot;createCredential&quot;,<br>
+&quot;v&quot;: &quot;1.0.0&quot;<br>
+}<br>
+输出<br>
+{<br>
+&quot;respBody&quot;: {<br>
+&quot;@context&quot;: &quot;https://github.com/WeBankFinTech/WeIdentity/blob/master/context/v1&quot;,<br>
+&quot;claim&quot;: {<br>
+&quot;age&quot;: 18,<br>
+&quot;gender&quot;: &quot;F&quot;,<br>
+&quot;name&quot;: &quot;zhang san&quot;<br>
+},<br>
+&quot;cptId&quot;: 2000000,<br>
+&quot;expirationDate&quot;: &quot;2119-04-18T21:12:33Z&quot;,<br>
+&quot;id&quot;: &quot;ee05ccb4-352e-4c9a-92d0-b9126d6136da&quot;,<br>
+&quot;issuanceDate&quot;: &quot;2022-04-23T18:11:58Z&quot;,<br>
+&quot;issuer&quot;: &quot;did:weid:0xcefbd444b2c0f441ff0e3cb774a48a6d68cc6df2&quot;,<br>
+&quot;proof&quot;: {<br>
+&quot;created&quot;: &quot;1650708718000&quot;,<br>
+&quot;creator&quot;: &quot;did:weid:0xcefbd444b2c0f441ff0e3cb774a48a6d68cc6df2&quot;,<br>
+&quot;signature&quot;: &quot;eOuZj6naG4LWveUgehRJp0vXqECtVx+mUVKVyyHpSrlBB1c3ctij4ghK4vmf3p9FqGXgkLBelUCS1A2sGb3RiwE=&quot;,<br>
+&quot;type&quot;: &quot;Secp256k1&quot;<br>
+}<br>
+},<br>
+&quot;loopback&quot;: null,<br>
+&quot;errorCode&quot;: 0,<br>
+&quot;errorMessage&quot;: &quot;success&quot;<br>
+}</p>
+]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[weidentity启动]]></title>
         <id>https://yjw233.github.io/post/weidentity-qi-dong/</id>
         <link href="https://yjw233.github.io/post/weidentity-qi-dong/">
@@ -18,21 +171,10 @@
         <updated>2022-04-04T02:38:19.000Z</updated>
         <content type="html"><![CDATA[<p>cd weid-build-tools<br>
 ./start.sh</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[webase启动]]></title>
-        <id>https://yjw233.github.io/post/webase-qi-dong/</id>
-        <link href="https://yjw233.github.io/post/webase-qi-dong/">
-        </link>
-        <updated>2022-04-02T07:15:30.000Z</updated>
-        <content type="html"><![CDATA[<p>cd webase-deploy/<br>
-python3 deploy.py startAll</p>
-<p>查看ip地址<br>
-ifconfig -a</p>
-<p>http://xxxx:5000/#/home<br>
-admin<br>
-Abcd1234</p>
+<p>restservice<br>
+cd WeIdentity-R<br>
+cd dist<br>
+./start.sh</p>
 ]]></content>
     </entry>
     <entry>
