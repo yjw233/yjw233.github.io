@@ -4,9 +4,9 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>k8s secret | Jev</title>
+<title>k8s命令 | Jev</title>
 
-<link rel="shortcut icon" href="https://yjw233.github.io/favicon.ico?v=1655721602722">
+<link rel="shortcut icon" href="https://yjw233.github.io/favicon.ico?v=1660188938264">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://yjw233.github.io/styles/main.css">
@@ -85,7 +85,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1655721602722" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1660188938264" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -97,17 +97,33 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    k8s secret
+                    k8s命令
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
                         · 2022-06-16 ·
                     </time>
                     
+                        <a href="https://yjw233.github.io/tag/_eXzqw1YU/" class="post-tags">
+                            # k8s
+                        </a>
+                    
                 </div>
                 <div class="post-content">
-                    <p>kubectl get secret -n titanium regcred -o jsonpath='{.data.*}'| base64 -d<br>
-kubectl get secret -n titanium default-token-dqpqz -o yaml</p>
+                    <p>查看development文件</p>
+<pre><code class="language-sh">kubectl get deployment -n yyy, 
+kubectl get deployment xxx -n yyy -o yaml 
+</code></pre>
+<p>编辑development文件</p>
+<pre><code class="language-sh"> kubectl edit deployment xxx -n yyy
+</code></pre>
+<p>导出yaml文件</p>
+<pre><code class="language-sh">kubectl get deployment xxx -n yyy -o yaml &gt; abc.yaml
+</code></pre>
+<p>secret</p>
+<pre><code class="language-sh">kubectl get secret -n titanium regcred -o jsonpath='{.data.*}'| base64 -d
+kubectl get secret -n titanium default-token-dqpqz -o yaml
+</code></pre>
 
                 </div>
             </article>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yjw233.github.io</id>
     <title>Jev</title>
-    <updated>2022-06-20T10:40:31.609Z</updated>
+    <updated>2022-08-11T03:39:38.085Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yjw233.github.io"/>
     <link rel="self" href="https://yjw233.github.io/atom.xml"/>
@@ -11,13 +11,60 @@
     <icon>https://yjw233.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Jev</rights>
     <entry>
-        <title type="html"><![CDATA[k8s secret]]></title>
+        <title type="html"><![CDATA[向服务器上传文件]]></title>
+        <id>https://yjw233.github.io/post/xiang-fu-wu-qi-shang-chuan-wen-jian/</id>
+        <link href="https://yjw233.github.io/post/xiang-fu-wu-qi-shang-chuan-wen-jian/">
+        </link>
+        <updated>2022-07-03T06:28:21.000Z</updated>
+        <content type="html"><![CDATA[<p>apt-get install lrzsz<br>
+rz</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[k8s api测试]]></title>
+        <id>https://yjw233.github.io/post/k8s-api-ce-shi/</id>
+        <link href="https://yjw233.github.io/post/k8s-api-ce-shi/">
+        </link>
+        <updated>2022-07-02T14:17:52.000Z</updated>
+        <content type="html"><![CDATA[<p>step1：在k8s controller上执行port-forward:</p>
+<pre><code class="language-sh">kubectl port-forward service/weidentity-restservice -n titanium 6000:80
+</code></pre>
+<p>step2: 在本地建立tunnel</p>
+<pre><code class="language-sh">ssh -N -L 6000:localhost:6000 root@api.k8s-prod-hkg01.prod.bcollie.net
+</code></pre>
+<p>step3: 访问http://127.0.0.1:6000访问</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux下Java JDK版本切换]]></title>
+        <id>https://yjw233.github.io/post/linux-xia-java-jdk-ban-ben-qie-huan/</id>
+        <link href="https://yjw233.github.io/post/linux-xia-java-jdk-ban-ben-qie-huan/">
+        </link>
+        <updated>2022-06-29T03:27:03.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-sh">sudo update-alternatives --config java
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[k8s命令]]></title>
         <id>https://yjw233.github.io/post/k8s-secret/</id>
         <link href="https://yjw233.github.io/post/k8s-secret/">
         </link>
         <updated>2022-06-15T16:35:27.000Z</updated>
-        <content type="html"><![CDATA[<p>kubectl get secret -n titanium regcred -o jsonpath='{.data.*}'| base64 -d<br>
-kubectl get secret -n titanium default-token-dqpqz -o yaml</p>
+        <content type="html"><![CDATA[<p>查看development文件</p>
+<pre><code class="language-sh">kubectl get deployment -n yyy, 
+kubectl get deployment xxx -n yyy -o yaml 
+</code></pre>
+<p>编辑development文件</p>
+<pre><code class="language-sh"> kubectl edit deployment xxx -n yyy
+</code></pre>
+<p>导出yaml文件</p>
+<pre><code class="language-sh">kubectl get deployment xxx -n yyy -o yaml &gt; abc.yaml
+</code></pre>
+<p>secret</p>
+<pre><code class="language-sh">kubectl get secret -n titanium regcred -o jsonpath='{.data.*}'| base64 -d
+kubectl get secret -n titanium default-token-dqpqz -o yaml
+</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -42,6 +89,8 @@ git status<br>
 git add<br>
 完成一次本地commit<br>
 git commit -a -m  &quot;&quot;</p>
+<p>将本地内容同步到云端<br>
+git push origin</p>
 <p>参考 https://blog.csdn.net/qcmc123/article/details/119612411</p>
 ]]></content>
     </entry>
@@ -161,178 +210,6 @@ git clone  https://github.com/WeBankBlockchain/WeIdentity-Rest-Service.git</p>
 &quot;errorCode&quot;: 0,<br>
 &quot;errorMessage&quot;: &quot;success&quot;<br>
 }</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[weidentity启动]]></title>
-        <id>https://yjw233.github.io/post/weidentity-qi-dong/</id>
-        <link href="https://yjw233.github.io/post/weidentity-qi-dong/">
-        </link>
-        <updated>2022-04-04T02:38:19.000Z</updated>
-        <content type="html"><![CDATA[<p>cd weid-build-tools<br>
-./start.sh</p>
-<p>restservice<br>
-cd WeIdentity-R<br>
-cd dist<br>
-./start.sh</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[对象成员（C++）]]></title>
-        <id>https://yjw233.github.io/post/dui-xiang-cheng-yuan-c/</id>
-        <link href="https://yjw233.github.io/post/dui-xiang-cheng-yuan-c/">
-        </link>
-        <updated>2021-05-06T12:31:32.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="题目描述">题目描述</h1>
-<p>设计一个产品类 Product ，允许通过如下方式来创建产品对象： 通过指定产品名创建； 通过指定产品名和产品价格创建； 通过指定产品名、产品价格、出厂日期（对象成员）创建； Product 还应该包含如下属性：生产厂家、易碎标记、有效日期（使用对象成员）、颜色、高度。成员函数包括访问和修改这些属性的操作。 在 main( ) 中定义对象，并输出相关信息。<br>
-相关类的定义提示:</p>
-<pre><code class="language-c++">class Product
-{
-       string name;
-       double price;
-       Date deptime;
-       string factory;
-       bool easy_break;
-       Date valtime; 
-       string color;
-       double high;
-public:
-       ........ 
-       void output (  ); 
-}; 
-</code></pre>
-<p>输出函数提示 :</p>
-<pre><code class="language-c++">void Product::output (  )
-{
-       cout&lt;&lt;name&lt;&lt;&quot; &quot;&lt;&lt;price&lt;&lt;endl;
-       cout&lt;&lt;deptime.Getyear()&lt;&lt;&quot;-&quot;&lt;&lt;deptime.Getmonth()&lt;&lt;&quot;-&quot;&lt;&lt;deptime.Getday()&lt;&lt;endl;
-       cout&lt;&lt;factory&lt;&lt;&quot; &quot;&lt;&lt;easy_break&lt;&lt;endl;
-       cout&lt;&lt;valtime.Getyear()&lt;&lt;&quot;-&quot;&lt;&lt;valtime.Getmonth()&lt;&lt;&quot;-&quot;&lt;&lt;valtime.Getday()&lt;&lt;endl;
-} 
-</code></pre>
-<p>main（）函数如下，请复制使用</p>
-<pre><code class="language-c++">int main()
-{
-       string  s;
-       cin&gt;&gt;s;
-       Product p1(&quot;car&quot;);
-       Product p2(&quot;glass&quot;,3.00);
-       Product p3(&quot;pen&quot;,5.00,2009,3,14);
-       p1.SetProduct(&quot;car&quot;,100000.0,2009,3,14,&quot;nanjing&quot;,0,2010,10,14,&quot;red&quot;,1.5);
-       p1.output();
-       p2.output();
-       p3.output();
-       return 0;
-}
-</code></pre>
-<p>输入描述</p>
-<pre><code class="language-c++">Start
-</code></pre>
-<p>输出描述</p>
-<pre><code class="language-c++">Constrcting One....
-Constrcting Two....
-Constrcting Three....
-car 100000
-2009-3-14
-nanjing 0
-2010-10-14
-glass 3
-2000-1-1
-unnamed 0
-2000-1-1
-pen 5
-2009-3-14
-unnamed 0
-2000-1-1
-</code></pre>
-<h1 id="解法">解法</h1>
-<pre><code class="language-c++">#include&lt;iostream&gt;
-#include&lt;string&gt;
-using namespace std;
-class Date{
-       
-       int year;
-       int month;
-       int day;
-       public:
-       
-       Date(int y=2000,int m=1,int d=1){year=y;month=m;day=d;}
-       int Getyear(){return year;}
-       int Getmonth(){return month;}
-       int Getday(){return day;}
-       void setDate(int y,int m,int d){year=y;month=m;day=d;}
-};
-class Product
-{
-       string name;
-       double price;
-       Date deptime;
-       string factory;
-       bool easy_break;
-       Date valtime; 
-       string color;
-       double high;
-public:
-     Product(string n);
-      Product(string n,double p);
-       Product(string n,double p,int y,int m,int d);
-       void SetProduct(string n,double p,int y,int m,int d,string f,bool e,int yy,int mm,int dd,string c,double h);
-       void output (  ); 
-}; 
- //Product::Product(){name=&quot;unnaned&quot;;price=0;factory=&quot;nanjing&quot;;easy_break=0;color=&quot;&quot;;high=0;}
- Product::Product(string n)
-       {
-              name=n;price=0;factory=&quot;unnamed&quot;;easy_break=0;color=&quot;&quot;;high=0;
-              cout&lt;&lt;&quot;Constrcting One....&quot;&lt;&lt;endl;
-       } 
-Product::Product(string n,double p)
-       {
-              name=n;price=p;factory=&quot;unnamed&quot;;easy_break=0;color=&quot;&quot;;high=0;
-              cout&lt;&lt;&quot;Constrcting Two....&quot;&lt;&lt;endl;
-       } 
-Product::Product(string n,double p,int y,int m,int d):deptime(y,m,d)
-       {
-              name=n;price=p;factory=&quot;unnamed&quot;;easy_break=0;color=&quot;&quot;;high=0;
-              cout&lt;&lt;&quot;Constrcting Three....&quot;&lt;&lt;endl;
-       } 
-void Product::SetProduct(string n,double p,int y,int m,int d,string f,bool e,int yy, int mm,int dd,string c,double h)
-       {      name=n;price=p;deptime.setDate(y,m,d);factory=f;easy_break=e;valtime.setDate(yy,mm,dd);color=c;high=h;
-       } 
-void Product::output (  )
-{
-       cout&lt;&lt;name&lt;&lt;&quot; &quot;&lt;&lt;price&lt;&lt;endl;
-       cout&lt;&lt;deptime.Getyear()&lt;&lt;&quot;-&quot;&lt;&lt;deptime.Getmonth()&lt;&lt;&quot;-&quot;&lt;&lt;deptime.Getday()&lt;&lt;endl;
-       cout&lt;&lt;factory&lt;&lt;&quot; &quot;&lt;&lt;easy_break&lt;&lt;endl;
-       cout&lt;&lt;valtime.Getyear()&lt;&lt;&quot;-&quot;&lt;&lt;valtime.Getmonth()&lt;&lt;&quot;-&quot;&lt;&lt;valtime.Getday()&lt;&lt;endl;
-} 
-
-int main()
-{
-       string  s;
-       cin&gt;&gt;s;
-       Product p1(&quot;car&quot;);
-       Product p2(&quot;glass&quot;,3.00);
-       Product p3(&quot;pen&quot;,5.00,2009,3,14);
-       p1.SetProduct(&quot;car&quot;,100000.0,2009,3,14,&quot;nanjing&quot;,0,2010,10,14,&quot;red&quot;,1.5);
-       p1.output();
-       p2.output();
-       p3.output();
-       return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[text]]></title>
-        <id>https://yjw233.github.io/post/text/</id>
-        <link href="https://yjw233.github.io/post/text/">
-        </link>
-        <updated>2021-05-03T11:15:02.000Z</updated>
-        <summary type="html"><![CDATA[<p>#text#</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>#text#</p>
-<!-- more -->
-<!-- more -->
 ]]></content>
     </entry>
 </feed>
